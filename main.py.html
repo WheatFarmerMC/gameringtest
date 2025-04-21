@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ff4c8f; font-style: italic;}
+.s1 { color: #fcfcfa;}
+.s2 { color: #c0aaff;}
+.s3 { color: #939293;}
+.s4 { color: #fff48a;}
+.s5 { color: #c994ff;}
+</style>
+</head>
+<body bgcolor="#181818">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">keyboard</span>
+<span class="s0">from </span><span class="s1">serial </span><span class="s0">import </span><span class="s2">*</span>
+<span class="s0">import </span><span class="s1">serial</span><span class="s3">.</span><span class="s1">tools</span><span class="s3">.</span><span class="s1">list_ports</span>
+
+<span class="s1">serialPort </span><span class="s2">= </span><span class="s1">Serial</span><span class="s3">(</span><span class="s4">'COM6'</span><span class="s3">, </span><span class="s5">57600</span><span class="s3">, </span><span class="s1">timeout</span><span class="s2">=</span><span class="s5">0</span><span class="s3">, </span><span class="s1">writeTimeout</span><span class="s2">=</span><span class="s5">0</span><span class="s3">)</span>
+<span class="s0">while True</span><span class="s2">:</span>
+    <span class="s0">if </span><span class="s1">keyboard</span><span class="s3">.</span><span class="s1">is_pressed</span><span class="s3">(</span><span class="s1">keyboard</span><span class="s3">.</span><span class="s1">read_key</span><span class="s3">())</span><span class="s2">:</span>
+        <span class="s1">a </span><span class="s2">= </span><span class="s4">'a'</span>
+        <span class="s1">byterep </span><span class="s2">= </span><span class="s1">a</span><span class="s3">.</span><span class="s1">encode</span><span class="s3">(</span><span class="s4">'utf-8'</span><span class="s3">)</span>
+        <span class="s1">serialPort</span><span class="s3">.</span><span class="s1">write</span><span class="s3">(</span><span class="s1">byterep</span><span class="s3">)</span></pre>
+</body>
+</html>
